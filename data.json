@@ -1,0 +1,10 @@
+{
+  "apiKey": "2/497138653085843/1207310094188114:e2cffaaf3ac7e00614f62b21ffd82133",
+  "workspaceId": "177484169560225",
+  "projectId": "1204351403412187",
+  "assigneeId": "497138653085843",
+  "userSectionToExclude": "1200892062747278,1201071309982596",
+  "taskTemplate": "- [ ] [{{task_name}}](https://app.asana.com/0/{{project_id}}/{{task_id}}/) [[{{project_name}}]]",
+  "projectIdsToExclude": "1200945229397586, 1200944674698820, 655997007968330, 997609512005395",
+  "userSectionsToExclude": "1200892062747278,1201071309982596"
+}

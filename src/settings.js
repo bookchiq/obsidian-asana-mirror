@@ -10,7 +10,19 @@ export class AsanaMirrorSettingTab extends PluginSettingTab {
     const { containerEl } = this;
     containerEl.empty();
 
-    containerEl.createEl('h2', { text: 'Settings for Obsidian Asana Mirror' });
+    containerEl.createEl('h2', { text: 'Settings for Asana Mirror' });
+
+    // Add a setting for the Obsidian note name/path
+    new Setting(containerEl)
+      .setName('Obsidian note name/path')
+      .setDesc('Enter the name or path of the Obsidian note to sync tasks to. Default is "Asana Tasks".')
+      .addText(text => text
+        .setPlaceholder('Enter the note name/path')
+        .setValue(this.plugin.settings.noteName || '')
+        .onChange(async (value) => {
+          this.plugin.settings.noteName = value;
+          await this.plugin.saveSettings();
+        }));
 
     // Add a setting for the API key
     new Setting(containerEl)

@@ -75,15 +75,21 @@ export default class AsanaMirror extends Plugin {
 
   async updateObsidianNote(tasks) {
     // Get or create a specific note in Obsidian
-    const file = await this.app.vault.getAbstractFileByPath('Asana Tasks.md');
-    let fileContent = '';
-
-    if (file) {
-      fileContent = await this.app.vault.read(file);
-    } else {
-      await this.app.vault.create('Asana Tasks.md', '');
+    let filename = this.settings.noteName || 'Asana Tasks.md';
+    // Make sure the filename has the .md extension
+    if (!filename.endsWith('.md')) {
+      filename += '.md';
     }
 
+    let file = await this.app.vault.getAbstractFileByPath(filename);
+    
+    // If the file doesn't exist, create it
+    if (! file) {
+      console.log(`Creating new file: ${filename}`);
+      file = await this.app.vault.create(filename, '');
+    }
+    
+    
     // Exclude tasks based on user-specified section IDs.
     if (this.settings.userSectionsToExclude) {
       let userSectionsToExclude = this.settings.userSectionsToExclude.split(',');

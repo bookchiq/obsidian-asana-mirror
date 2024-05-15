@@ -83,5 +83,17 @@ export class AsanaMirrorSettingTab extends PluginSettingTab {
           this.plugin.settings.taskTemplate = value;
           await this.plugin.saveSettings();
         }));
+
+    // Add a setting for the update interval
+    new Setting(containerEl)
+      .setName('Update interval')
+      .setDesc('Enter the update interval in minutes.')
+      .addText(text => text
+        .setPlaceholder('Enter the update interval')
+        .setValue(this.plugin.settings.updateInterval || '')
+        .onChange(async (value) => {
+          this.plugin.settings.updateInterval = value;
+          await this.plugin.saveSettings();
+        }));
   }
 }

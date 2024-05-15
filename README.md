@@ -77,7 +77,7 @@
   - Use the command palette (`Cmd/Ctrl + P`) to run the `Sync Asana Tasks` command and manually sync tasks.
 
 - **Periodic Sync:**
-  - The plugin is configured to sync tasks every hour by default. You can change the interval in the plugin code if needed.
+  - The plugin sync interval is set in the settings.
 
 ## Development
 

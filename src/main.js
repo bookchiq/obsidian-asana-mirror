@@ -23,8 +23,13 @@ export default class AsanaMirror extends Plugin {
       callback: () => this.syncTasks()
     });
 
-    // Optionally, set up periodic sync (e.g., every hour)
-    this.intervalId = setInterval(() => this.syncTasks(), 3600000); // 1 hour in milliseconds
+    // Set up periodic sync based on user-specified interval
+    if (this.settings.updateInterval) {
+      this.intervalId = setInterval(() => this.syncTasks(), this.settings.updateInterval * 60 * 1000);
+
+      // Sync tasks on load
+      this.syncTasks();
+    }
   }
 
   async onunload() {

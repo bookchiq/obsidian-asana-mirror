@@ -1,6 +1,6 @@
 {
   "id": "obsidian-asana-mirror",
-  "name": "Obsidian Asana Mirror",
+  "name": "Asana Mirror",
   "version": "1.0.2",
   "minAppVersion": "0.9.12",
   "description": "Sync Asana tasks with Obsidian notes.",

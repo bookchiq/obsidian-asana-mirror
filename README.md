@@ -10,6 +10,9 @@
 - Customize the task template to control how tasks are displayed in Obsidian.
 - Set up periodic sync (e.g., every hour) to keep your task list up to date automatically.
 
+## Caveats
+- Right now this is very much a developer's plugin. There are only basic settings, and they expect you to be pretty familiar with the Asana API; it's more a utility than a plug-and-play solution.
+
 ## Installation
 
 1. **Clone or Download the Plugin:**
@@ -63,6 +66,10 @@
      - `{{completed}}`: Task completion status
      - `{{notes}}`: Task notes
      - `{{assignee_section_id}}`: Assignee section ID
+
+    ### Some Template Suggestions
+    - `- [ ] [{{task_name}}](https://app.asana.com/0/{{project_id}}/{{task_id}}/) [[{{project_name}}]]` for a basic linked listing
+    - `- [ ] [{{task_name}}](https://app.asana.com/0/{{project_id}}/{{task_id}}/) [[{{project_name}}]] 📅 {{due_date}}` to use Obsidian Tasks
 
 ## Usage
 

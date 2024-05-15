@@ -8,7 +8,7 @@ const DEFAULT_SETTINGS = {
 
 export default class AsanaMirror extends Plugin {
   async onload() {
-    console.log('Loading Obsidian Asana Mirror plugin');
+    console.log('Loading Asana Mirror plugin');
 
     // Load settings
     await this.loadSettings();
@@ -28,7 +28,7 @@ export default class AsanaMirror extends Plugin {
   }
 
   async onunload() {
-    console.log('Unloading Obsidian Asana Mirror plugin');
+    console.log('Unloading Asana Mirror plugin');
 
     // Clear the interval if it's set
     if (this.intervalId) {
